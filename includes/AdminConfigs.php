@@ -1,6 +1,5 @@
 <?php
 namespace MakechTec\AssetsLoader;
-use MakechTec\PageManager\site;
 use MakechTec\AssetsLoader\Loader;
 
 class AdminConfigs{

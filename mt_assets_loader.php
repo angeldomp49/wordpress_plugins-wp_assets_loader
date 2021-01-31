@@ -1,26 +1,19 @@
 <?php
 /*
 Plugin Name: Assets Loader
-Plugin URI: http://makechtecnology.com
-Description: Cargando scripst personalizados
-Author: Neil Gee
-Version: 1.3.2
-Author URI:http://makechtecnology.com
+Plugin URI: https://makechtecnology.com/assets-loader
+Description: Carga CDN de estilos y scripts js con la configuración de wordpress
+Author: Makech Tecnology
+Version: 1.0.0
+Author URI:https://makechtecnology.com
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
-Text Domain: assetsLoader
-Domain Path: /languages/
 */
-use MakechTec\PageManager\Template\Template;
-use MakechTec\PageManager\Site;
 use MakechTec\AssetsLoader\Loader;
 use MakechTec\AssetsLoader\AdminConfigs;
 
-$externalDependencies = 'vendor/MakechTec/PageManager/';
 $includes = 'includes/';
 
-include( $externalDependencies . 'Template/Template.php' );
-include( $externalDependencies . 'Site.php' );
 include( $includes . 'Loader.php' );
 include( $includes . 'AdminConfigs.php' );
 include( $includes . 'Dependencies.php' );
