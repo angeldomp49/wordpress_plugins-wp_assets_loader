@@ -21,6 +21,8 @@ include( $includes . 'Dependencies.php' );
 add_action( 'admin_init', 'MakechTec\AssetsLoader\AdminConfigs::registerSettings' );
 
 add_action( 'admin_enqueue_scripts', 'MakechTec\AssetsLoader\Dependencies::loadScripts' );
+add_action( 'admin_enqueue_scripts', 'MakechTec\AssetsLoader\Dependencies::loadStyles' );
+
 add_action( 'wp_enqueue_scripts', 'MakechTec\AssetsLoader\Loader::enqueueScripts');
 add_action( 'wp_enqueue_styles', 'MakechTec\AssetsLoader\Loader::enqueueStyles' );
 
