@@ -6,6 +6,10 @@ class Dependencies{
         wp_enqueue_script( 'addInputs', plugins_url( '/mt-load-assets/assets/js/addInputs.js'), array(), null, true );
     }
     public static function loadStyles(){
-        wp_enqueue_style(  );
+        //if you need any
+    }
+    public static function loadPluginAssets(){
+        add_action( 'admin_enqueue_scripts', 'MakechTec\AssetsLoader\Dependencies::loadScripts' );
+        add_action( 'admin_enqueue_scripts', 'MakechTec\AssetsLoader\Dependencies::loadStyles' );
     }
 }
