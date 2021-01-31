@@ -1,4 +1,4 @@
 <?php 
 
-register_settings( 'mtLaAssetsUrls', 'mtLaCustomScripts' );
-register_settings( 'mtLaAssetsUrls', 'mtLaCustomStyles' );
+register_settings( 'mtAlAssetsUrls', 'mtAlCustomScripts' );
+register_settings( 'mtAlAssetsUrls', 'mtAlCustomStyles' );

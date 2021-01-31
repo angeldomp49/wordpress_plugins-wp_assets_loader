@@ -12,7 +12,7 @@ class Loader{
     }
     
     public static function getUrlScripts(){
-        return get_option( 'mt_la_stocked_urls_scripts' );
+        return get_option( 'mt_al_stocked_urls_scripts' );
     }
     
     public static function enqueueStyles(){
@@ -23,6 +23,6 @@ class Loader{
     }
     
     public static function getUrlStyles(){
-        return get_option( 'mt_la_stocked_urls_styles' );
+        return get_option( 'mt_al_stocked_urls_styles' );
     }
 }

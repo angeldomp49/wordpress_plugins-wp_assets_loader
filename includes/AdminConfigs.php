@@ -10,11 +10,11 @@ class AdminConfigs{
         self::addPageSections();
         self::addFieldsSections();
         ?>
-            <form action="options.php" method="post" id ="mt_la_form_settings_urls">
+            <form action="options.php" method="post" id ="mt_al_form_settings_urls">
                 <input type="hidden" name="" value="<?php echo( plugins_url( '/mt-load-assets/assets/js/addInputs.js') ) ?>">
                 <?php
-                    settings_fields( 'mt_la_options' );
-                    do_settings_sections( 'mtLaUrlsSettings' );
+                    settings_fields( 'mt_al_options' );
+                    do_settings_sections( 'mtAlUrlsSettings' );
                 ?>
                 <?php
                 submit_button( 'Guardar' );
@@ -24,16 +24,16 @@ class AdminConfigs{
         
     }
     public static function registerSettings(){
-        register_setting( 'mt_la_options', 'mt_la_stocked_urls_scripts' );
-        register_setting( 'mt_la_options', 'mt_la_stocked_urls_styles' );
+        register_setting( 'mt_al_options', 'mt_al_stocked_urls_scripts' );
+        register_setting( 'mt_al_options', 'mt_al_stocked_urls_styles' );
     }
     public static function addPageSections(){
-        add_settings_section( 'mtLaScriptsSection', 'Urls Scripts To Enqueue', 'MakechTec\AssetsLoader\AdminConfigs::scriptsDescription', 'mtLaUrlsSettings' );
-        add_settings_section( 'mtLaStylesSection', 'Urls Styles To Enqueue', 'MakechTec\AssetsLoader\AdminConfigs::stylesDescription', 'mtLaUrlsSettings' );    
+        add_settings_section( 'mtAlScriptsSection', 'Urls Scripts To Enqueue', 'MakechTec\AssetsLoader\AdminConfigs::scriptsDescription', 'mtAlUrlsSettings' );
+        add_settings_section( 'mtAlStylesSection', 'Urls Styles To Enqueue', 'MakechTec\AssetsLoader\AdminConfigs::stylesDescription', 'mtAlUrlsSettings' );    
     }
     public static function addFieldsSections(){
-        add_settings_field( 'mtLaScriptsFields', 'Enter your Urls Scripts Here', 'MakechTec\AssetsLoader\AdminConfigs::printCurrentUrlsScripts', 'mtLaUrlsSettings', 'mtLaScriptsSection' );
-        add_settings_field( 'mtLaStylesFields', 'Enter your Urls Styles Here', 'MakechTec\AssetsLoader\AdminConfigs::printCurrentUrlsStyles', 'mtLaUrlsSettings', 'mtLaStylesSection' );
+        add_settings_field( 'mtAlScriptsFields', 'Enter your Urls Scripts Here', 'MakechTec\AssetsLoader\AdminConfigs::printCurrentUrlsScripts', 'mtAlUrlsSettings', 'mtAlScriptsSection' );
+        add_settings_field( 'mtAlStylesFields', 'Enter your Urls Styles Here', 'MakechTec\AssetsLoader\AdminConfigs::printCurrentUrlsStyles', 'mtAlUrlsSettings', 'mtAlStylesSection' );
     }
     public static function printCurrentUrlsScripts(){
         $listOptionsScripts = Loader::getUrlScripts();
@@ -42,10 +42,10 @@ class AdminConfigs{
             $i = 0;
             foreach( $listOptionsScripts as $option ){
                 ?>
-                    <div class="form-control mt_la_input_url_script">
-                        <input id="mt_la_script-<?php echo( $i ); ?>" name="mt_la_stocked_urls_scripts[mt_la_script-<?php echo( $i ); ?>]" type="text" class="col-8" value = "<?php echo( $option ); ?>">
+                    <div class="form-control mt_al_input_url_script">
+                        <input id="mt_al_script-<?php echo( $i ); ?>" name="mt_al_stocked_urls_scripts[mt_al_script-<?php echo( $i ); ?>]" type="text" class="col-8" value = "<?php echo( $option ); ?>">
                         <div class="col-4">
-                            <button class="btn btn-lg btn-danger mt_la_btn_remove_input"><?php echo( __( 'Borrar' ) ); ?></button>
+                            <button class="btn btn-lg btn-danger mt_al_btn_remove_input"><?php echo( __( 'Borrar' ) ); ?></button>
                         </div>
                     </div>
                 <?php
@@ -55,7 +55,7 @@ class AdminConfigs{
         else{
             ?>
                 <div class="form-control">
-                    <input id="mt_la_script-0" name="mt_la_stocked_urls_scripts[mt_la_script-0]" type="text" class="col-8" value = "">
+                    <input id="mt_al_script-0" name="mt_al_stocked_urls_scripts[mt_al_script-0]" type="text" class="col-8" value = "">
                     <div class="col-4">
                         <button class="btn btn-lg btn-danger"><?php echo( __( 'Borrar' ) ); ?></button>
                     </div>
@@ -63,7 +63,7 @@ class AdminConfigs{
             <?php
         }
         ?>
-            <button class="btn btn-lg btn-info" id="mt_la_add_new_script_button" type="button"> 
+            <button class="btn btn-lg btn-info" id="mt_al_add_new_script_button" type="button"> 
                 <?php echo( __( 'Agregar nuevo' ) ); ?> 
             </button>
         <?php
