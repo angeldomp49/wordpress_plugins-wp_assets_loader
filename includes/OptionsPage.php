@@ -69,37 +69,6 @@ class OptionsPage  {
             </button>
         <?php
     }
-    public static function printCurrentUrlsStyles2(){
-        $listUrlsStyles = Loader::getUrlStyles();
-    
-        if( !empty( $listUrlsStyles ) ){
-            foreach( $listUrlsStyles as $url ){
-                ?>
-                    <div class="form-control">
-                        <input type="text" class="col-8" value = "<?php echo( $url ); ?>">
-                        <div class="col-4">
-                            <button class="btn btn-lg btn-danger"><?php echo( __( 'Borrar' ) ); ?></button>
-                        </div>
-                    </div>
-                <?php
-            }
-        }
-        else{
-            ?>
-                <div class="form-control">
-                    <input type="text" class="col-8" value = "">
-                    <div class="col-4">
-                        <button class="btn btn-lg btn-danger"><?php echo( __( 'Borrar' ) ); ?></button>
-                    </div>
-                </div>
-            <?php
-        }
-        ?>
-            <button class="btn btn-lg btn-info" type="button"> 
-                <?php echo( __( 'Agregar nuevo' ) ); ?> 
-            </button>
-        <?php
-    }
     public static function printCurrentUrlsStyles(){
         $listOptionsStyles = Loader::getUrlStyles();
     
