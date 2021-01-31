@@ -23,7 +23,7 @@ class Loader{
         $urlStyles = self::getUrlStyles();
         $i = 0;
         foreach( $urlStyles as $url ){
-            wp_enqueue_style( 'customStyle-' . $i, $url, array());
+            wp_enqueue_style( 'customStyle-' . $i, $url, array(),null,'all');
         }
     }
     
