@@ -24,6 +24,7 @@ function createInputScript(){
     removeButton.classList.add( 'btn-lg' ); 
     removeButton.classList.add( 'btn-danger' ); 
     removeButton.classList.add( 'mt_al_btn_remove_input' ); 
+    removeButton.appendChild( document.createTextNode( 'Borrar' ) );
     
     newContainerButton.appendChild(removeButton);
     newContainer.appendChild(newInput);

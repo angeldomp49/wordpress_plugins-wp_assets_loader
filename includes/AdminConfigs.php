@@ -16,7 +16,10 @@ class AdminConfigs{
         add_action( 'admin_init', 'MakechTec\AssetsLoader\AdminConfigs::registerSettings' );
     }
     public static function registerSettings(){
-        register_setting( 'mt_al_options', 'mt_al_stocked_urls_scripts' );
-        register_setting( 'mt_al_options', 'mt_al_stocked_urls_styles' );
+        register_setting( 'mt_al_options', 'mt_al_stocked_urls_scripts', 'MakechTec\AssetsLoader\AdminConfigs::deleteEmptyFields' );
+        register_setting( 'mt_al_options', 'mt_al_stocked_urls_styles', 'MakechTec\AssetsLoader\AdminConfigs::deleteEmptyFields' );
+    }
+    function deleteEmptyFields( $fromOptionsPage ){
+        return array_filter( $fromOptionsPage );
     }
 }
